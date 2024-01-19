@@ -15,11 +15,6 @@ while i < 4:
     elif op == '3':
         if len(tarefas) == 0:
             print('Lista vazia!\n')
-        #else:
-        #    apagar=input('Digite o número da tarefa a ser excluída: ')
-        #    apagar=int(apagar)
-        #    tarefas.pop(apagar)
-        #    print('Tarefa apagada com sucesso!\n')
         else:
             try:
                 apagar=input('Informe a tarefa a ser excluída: ')
