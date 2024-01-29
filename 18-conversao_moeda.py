@@ -3,14 +3,22 @@ import json
 
 origem = input('Digite a moeda original: ')
 destino =input('Digite a moda de destino: ')
-valor_origem= float(input('Digite o valor: '))
+
 
 base_url = "https://open.er-api.com/v6/latest/"
 url = ''.join([base_url, origem])
 response = requests.get(url)
-#erro=response.json()['error-type']
+
 
 while (True):
+  try:
+    valor_origem= float(input('Digite o valor: '))
+  except:
+    print('Digite um valor válido!')
+    break
+  if valor_origem <=0:
+    print('Digite um valor maior que 0!')
+    break
   try:
     resultado=response.json()['rates'][destino]
     resultado = float(resultado)
